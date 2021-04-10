@@ -19,13 +19,9 @@ stripe_prices = {
     "subscription": os.environ["SUBSCRIPTION_PRICE_ID"],
 }
 
-<<<<<<< HEAD
-# print(stripe.Plan.list(limit=1))
+print(stripe.Plan.list(limit=3))
 
-app = Flask(__name__, static_folder='./client', static_url_path='', template_folder='./client')
-=======
 stripe.api_key = stripe_keys["secret_key"]
->>>>>>> 6d8a324b1259d6bc6dbeff8741cf12dbaeb517e5
 
 
 @app.route("/")
@@ -88,18 +84,6 @@ def create_checkout_session():
     except Exception as e:
         return jsonify(error=str(e)), 403
 
-<<<<<<< HEAD
-@app.route('/my-route', methods=['POST'])
-def my_route():
-#    print('This is `test`: ')
-    print(request.json['test'])
-    return jsonify({ 'request': request.json })
-
-    
-if __name__ == '__main__':
-    app.run(port=8080)
-
-=======
 
 if __name__ == 'app':
     flags = os.O_CREAT | os.O_EXCL | os.O_WRONLY
@@ -113,4 +97,3 @@ if __name__ == 'app':
     else:
         with os.fdopen(file_handle, 'w') as file_obj:
             file_obj.write(generateEd25519Key())
->>>>>>> 6d8a324b1259d6bc6dbeff8741cf12dbaeb517e5
