@@ -19,7 +19,7 @@ stripe_prices = {
     "subscription": os.environ["SUBSCRIPTION_PRICE_ID"],
 }
 
-print(stripe.Plan.list(limit=3))
+# print(stripe.Plan.list(limit=3))
 
 stripe.api_key = stripe_keys["secret_key"]
 
